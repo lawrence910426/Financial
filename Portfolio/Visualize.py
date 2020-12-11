@@ -4,6 +4,7 @@ from functools import cmp_to_key
 import numpy as np
 import pandas as pd
 
+
 with open('MinRiskPortfolio.pickle', 'rb') as handle:
     Risk, Portfolio = pickle.load(handle)
 
@@ -23,4 +24,5 @@ print(pd.DataFrame(Portfolio[:30]))
 print()
 print("------ Last 30 -------")
 print(pd.DataFrame(Portfolio[-30:]))
+pd.DataFrame(Portfolio).to_csv("MinRiskPortfolio.csv")
 Show(Portfolio)
