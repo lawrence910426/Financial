@@ -19,6 +19,7 @@ def Show(data):
     # plt.xticks(np.arange(len(data)), [item[2] for item in data])
     plt.show()
 
+print("Risk", Risk)
 print("------ Top 30 -------")
 print(pd.DataFrame(Portfolio[:30]))
 print()

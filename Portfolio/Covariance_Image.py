@@ -9,7 +9,8 @@ with open("Covariance.pickle", "rb") as handle:
 for row in raw["manifest"]:
     print(raw["manifest"][row])
 
-cov = np.clip(np.nan_to_num(np.log(cov)), -10, 10)
-plt.imshow(cov)
+pos = np.nan_to_num(np.clip(np.log(cov), -10, 10) + 10)
+neg = np.nan_to_num(np.clip(np.log(-cov), -10, 10) - 10)
+plt.imshow(pos + neg)
 plt.colorbar()
 plt.show()
